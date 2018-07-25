@@ -11,8 +11,8 @@ def setup()
 
   @food = Food.new("Walkers Crisps", 2, 1)
 
-  @drink1 = Drink.new("water", 0, 0)
-  @drink2 = Drink.new("beer", 4, 5)
+  @drink1 = Drink.new("water", 1, 0, 5)
+  @drink2 = Drink.new("beer", 4, 5, 20)
   @drinks = [@drink1, @drink2]
 
   @customer1 = Customer.new("Bob", 20, 21)
@@ -44,6 +44,15 @@ end
 def test_sell_food()
   @pub.sell_food(@food)
   assert_equal(2, @pub.money_in_till())
+end
+
+def test_stock_level_goes_down_when_drink_bought()
+  @pub.sell_drink(@drink2, 21, 0)
+  assert_equal(19, @pub.get_stock_of_drink(@drink2))
+end
+
+def test_get_total_stock_value()
+  assert_equal(85, @pub.get_total_stock_value())
 end
 
 end

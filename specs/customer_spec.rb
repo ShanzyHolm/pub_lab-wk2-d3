@@ -13,8 +13,8 @@ class CustomerTest < MiniTest::Test
 
     @food = Food.new("Walkers Crisps", 2, 1)
 
-    @drink1 = Drink.new("water", 0, 0)
-    @drink2 = Drink.new("beer", 4, 5)
+    @drink1 = Drink.new("water", 0, 0, 5)
+    @drink2 = Drink.new("beer", 4, 5, 20)
     @drinks = [@drink1, @drink2]
 
     @pub = Pub.new("Cheers", @drinks)
