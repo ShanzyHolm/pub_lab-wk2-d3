@@ -17,8 +17,8 @@ class Pub
     return @drinks.count()
   end
 
-  def sell_drink(drink, age)
-    if age >= 18
+  def sell_drink(drink, age, drunkenness_level)
+    if age >= 18 && drunkenness_level < 12
       @till += drink.price()
       return true
     end
