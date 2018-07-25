@@ -25,4 +25,8 @@ class Pub
     return false
   end
 
+  def sell_food(food)
+    @till += food.price()
+  end
+
 end

@@ -16,4 +16,10 @@ attr_reader :name, :wallet, :age, :drunkenness_level
     end
   end
 
+  def buys_food(pub, food)
+    pub.sell_food(food)
+    @wallet -= food.price()
+    @drunkenness_level -= food.rejuvenation_level()
+  end
+
 end
