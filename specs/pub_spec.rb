@@ -22,5 +22,9 @@ def test_till_starts_empty()
   assert_equal(0, @pub.money_in_till())
 end
 
+def test_has_drinks()
+  assert_equal(2, @pub.count_drinks())
+end
+
 
 end
