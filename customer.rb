@@ -1,15 +1,17 @@
 class Customer
 
-attr_reader :name, :wallet
+attr_reader :name, :wallet, :age
 
-  def initialize(name, wallet)
+  def initialize(name, wallet, age)
     @name = name
     @wallet = wallet
+    @age = age
   end
 
   def buy_drink(pub, drink)
-    @wallet -= drink.price()
-    pub.sell_drink(drink)
+    if pub.sell_drink(drink, @age)
+      @wallet -= drink.price()
+    end
   end
 
 end
