@@ -7,6 +7,8 @@ attr_reader :name, :wallet
     @wallet = wallet
   end
 
-
+  def buy_drink(pub, drink)
+    @wallet -= drink.price()
+  end
 
 end
