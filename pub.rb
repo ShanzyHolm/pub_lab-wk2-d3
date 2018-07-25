@@ -9,4 +9,8 @@ def initialize(name, drinks)
 
 end
 
+def money_in_till()
+  return @till
+end
+
 end

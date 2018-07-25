@@ -18,5 +18,9 @@ def test_has_name()
   assert_equal("Cheers", @pub.name())
 end
 
+def test_till_starts_empty()
+  assert_equal(0, @pub.money_in_till())
+end
+
 
 end
