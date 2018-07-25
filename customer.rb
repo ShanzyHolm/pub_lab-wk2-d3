@@ -10,7 +10,7 @@ attr_reader :name, :wallet, :age, :drunkenness_level
   end
 
   def buy_drink(pub, drink)
-    if pub.sell_drink(drink, @age)
+    if pub.sell_drink(drink, @age, @drunkenness_level)
       @wallet -= drink.price()
       @drunkenness_level += drink.alcohol_level()
     end
